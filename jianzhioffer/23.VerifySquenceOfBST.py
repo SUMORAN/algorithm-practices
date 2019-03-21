@@ -35,6 +35,10 @@ class Solution:
                     break
                 else:
                     continue
+            # 上述找split的for循环可以用下面函数代替，同时要把下面的if去掉，不要-1
+            # 哎呀反正这里要改，总之是为了找出来小于root的左半部分和大于root的右半部分
+            # import bisect
+            # split = bisect.bisect_right(subseq, root)
             if split == -1:
                 left = subseq
             else:
