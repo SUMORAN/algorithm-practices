@@ -1,5 +1,3 @@
-
-
 /*
 《二维数组中的查找》
 题目描述
@@ -27,7 +25,7 @@ public:
         if(array.begin()==array.end()){
             return false;
         }
-
+        
         int m = array.size(); //行数
         int n = array[0].size(); //列数
 
