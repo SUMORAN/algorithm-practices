@@ -39,12 +39,12 @@ class Solution:
         else:
             result = self.PowerUnsigned(base, exponent >> 1)
             result *= result
-            if exponent & 1:
+            if exponent & 1: # 奇数次幂
                 result *= base
             return result
         
     def equal(self, num1, num2):
-        if (num1 - num2) > -0.00000001 and (num1 - num2) < 0.00000001:
+        if (num1 - num2) > -0.00000001 and (num1 - num2) < -0.00000001:
             return True
         else:
             return False
