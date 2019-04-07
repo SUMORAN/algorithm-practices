@@ -7,6 +7,8 @@
 '''
 
 '''
+解题思路：
+
 '''
 class Solution:
     def PrintMinNumber(self, numbers):
