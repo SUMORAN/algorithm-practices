@@ -51,6 +51,8 @@ class Solution:
                     DfsSum(root.left, expectNumber, sum_now, list_now)
                 if root.right:
                     DfsSum(root.right, expectNumber, sum_now, list_now)
+            # 如果加上当前节点之后大于期望值或者等于期望值但钱钱节点不是叶子节点，就将这些这个点弹出去不保存，求和也不算它了，
+            # 此路不通
             list_now.pop()
             sum_now = sum_now - root.val
 
