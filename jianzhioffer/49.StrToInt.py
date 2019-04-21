@@ -9,4 +9,33 @@
 """
 class Solution:
     def StrToInt(self, s):
-        # write code here
+        numlist = ['0','1','2','3','4','5','6','7','8','9']
+        num = 0
+        label = 1 # 标记正负数
+        if not s:
+            return 0
+        if s[0] == '+':
+            label = 1
+        elif s[0] == '-':
+            label = 0
+        elif s[0] in numlist:
+            num = numlist.index(s[0])
+        
+        for i in range(1, len(s)):
+            if s[i] in numlist:
+                num = num * 10 + numlist.index(s[i])
+            else:
+                return 0
+        
+        if label == 1:
+            return num
+        else:
+            return -num
+
+def main():
+    s = '123'
+    res = Solution().StrToInt(s)
+    print(res)
+
+if __name__=='__main__':
+    main()
