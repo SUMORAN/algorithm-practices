@@ -26,3 +26,4 @@ class Solution:
             self.dic[char] += 1
         else:
             self.dic[char] = 1
+
