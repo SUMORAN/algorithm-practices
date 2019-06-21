@@ -24,7 +24,7 @@ class Solution:
     def uniqueMorseRepresentations(self, words):
         morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
         cases = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-        dic = dict(zip(cases, morse))
+        dic = dict(zip(cases, morse)) # zip方法将两个list对应起来成为二维list
         morses = []
         for i in words:
             tmp = ""

@@ -24,9 +24,9 @@ class Solution:
             preorder = [3,9,20,15,7]
             inorder = [9,3,15,20,7]
             '''
-            rootIndex = inorder.index(rootVal)
+            rootIndex = inorder.index(rootVal) # 找到根节点在中序遍历重的位置
 
-            preorderLeft = preorder[1:rootIndex+1] # 根右侧数字中表示左子树部分的几个
+            preorderLeft = preorder[1:rootIndex+1] # 根右侧数字中表示左子树部分的几个，其实就是根据中序遍历中根的位置得到左子树有多长
             inorderLeft = inorder[0:rootIndex] # 根左侧数字表示左子树部分
 
             preorderRight = preorder[rootIndex+1:] # 根右侧数字中表示右子树部分的几个
