@@ -30,3 +30,22 @@ class Solution(object):
         
         DFS(n, n, "", res)
         return res
+
+    def generateParenthesis(self, n):
+        """
+        :type n: int
+        :rtype: List[str]
+        """
+        def recursive(n, res):
+            if not n:
+                return []
+            else:
+                for i in recursive(n-1, res):
+                    res.append("(" + i + ")")
+
+        res = []
+        recursive(n, res) 
+        return res
+
+
+
