@@ -21,4 +21,25 @@ class Solution(object):
         :type k: int
         :rtype: List[int]
         """
+        hs = {} # 数字-频率
+        freq = {} # 频率-数字
+        for i in xrange(0, len(nums)):
+            if nums[i] not in hs:
+                hs[nums[i]] = 1
+            else:
+                hs[nums[i]] += 1
         
+        for z, v in hs.iteritems():
+            if v not in freq:
+                freq[v] = [z]
+            else:
+                freq[v].append(z)
+        
+        arr = []
+
+        # 把数字按出现频率次数大小存进arr
+        for x in xrange(len(nums), 0, -1):
+            if x in freq:
+                for i in freq[x]:
+                    arr.append(i)
+        return arr[:k]
