@@ -17,8 +17,8 @@ class Solution:
         for item in self.s:
             if self.dic[item] == 1:
                 return item
-        else:
-            return '#'
+        
+        return '#'
 
     def Insert(self, char):
         self.s += char

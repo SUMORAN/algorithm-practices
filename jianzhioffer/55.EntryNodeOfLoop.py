@@ -10,10 +10,10 @@
     这个在list里的点，就是环的起点
 
 """
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 class Solution:
     def EntryNodeOfLoop(self, pHead):
         if not pHead:
