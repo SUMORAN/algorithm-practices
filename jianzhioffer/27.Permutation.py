@@ -11,33 +11,45 @@
 解题思路：
 每次将字符串当作一个字符和剩余字符两部分，递归
 '''
-class Solution:
-    def Permutation(self, ss):
-        if not ss:
-            return []
-        res = []
+# class Solution:
+#     def Permutation(self, ss):
+#         if not ss:
+#             return []
+#         res = []
 
-        if len(ss)==1:
-            return ss
+#         if len(ss)==1:
+#             return ss
         
-        ss = list(ss)
+#         ss = list(ss)
 
-        for i in range(len(ss)):
-            tmp = []
+#         for i in range(len(ss)):
+#             tmp = []
             
-            tmp.append(ss[i])
-            tmp.append(' ')
-            if i > 0:
-                ss[0], ss[i] = ss[i], ss[0]
-            subTemp = self.Permutation(ss[1:])
-            for item in subTemp:
-                tmp[1] = ''.join(item)
-                temp = ''.join(tmp)
-                res.append(temp)
+#             tmp.append(ss[i])
+#             tmp.append(' ')
+#             if i > 0:
+#                 ss[0], ss[i] = ss[i], ss[0]
+#             subTemp = self.Permutation(ss[1:])
+#             for item in subTemp:
+#                 tmp[1] = ''.join(item)
+#                 temp = ''.join(tmp)
+#                 res.append(temp)
             
-        res = list(set(res))
-        res = sorted(res)
-        return res
+#         res = list(set(res))
+#         res = sorted(res)
+#         return res
 
-res = Solution().Permutation('aab')
-print(res)
+# res = Solution().Permutation('aab')
+# print(res)
+
+
+def quanpailie(arr, l, r):
+  if l == r:
+    print(arr)
+  else:
+    for i in range(l, r):
+      arr[i], arr[l] = arr[l], arr[i]
+      quanpailie(arr,l+1, r)
+      arr[i], arr[l] = arr[l], arr[i]
+nums = ["a","b","c","d"]
+quanpailie(nums, 0, len(nums))
